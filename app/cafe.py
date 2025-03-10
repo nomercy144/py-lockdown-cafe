@@ -12,12 +12,12 @@ class Cafe:
         let_in = True
         if "vaccine" not in visitor.keys():
             let_in = False
-            raise NotVaccinatedError("You must have a vaccine")
+            raise NotVaccinatedError
         elif visitor["vaccine"]["expiration_date"] < today:
             let_in = False
-            raise OutdatedVaccineError("You vaccine should be legal")
+            raise OutdatedVaccineError
         if visitor["wearing_a_mask"] is False:
             let_in = False
-            raise NotWearingMaskError("You should wear a mask")
+            raise NotWearingMaskError
         if let_in:
             return f"Welcome to {self.name}"
